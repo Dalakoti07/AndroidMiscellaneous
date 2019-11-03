@@ -34,25 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.POST,
-                URL,
-                parameters,
+        JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.POST, URL, parameters,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e( "Rest Response: ", response.toString() );
+                        Log.e("Rest Response: ", response.toString());
                     }
-                },
-                new Response.ErrorListener() {
+                }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e( "Rest Response: ", error.toString() );
-
+                        Log.e("Rest Response: ", error.toString());
 
                     }
                 }
-
 
         );
 
@@ -60,3 +54,36 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+// Another way of doing the same thing, their pass the JsonObject at params of
+// override a method
+// public void JsonParse(){
+
+// JsonObjectRequest jsonObjectRequest = new
+// JsonObjectRequest(Request.Method.POST,"http://httpbin.org/post",null, new
+// Response.Listener<JSONObject>() {
+
+// @Override
+// public void onResponse(JSONObject response) {
+// textView.setText("Response: " + response.toString());
+// Log.d("MainActivity",response.toString());
+// }
+// }, new Response.ErrorListener() {
+
+// @Override
+// public void onErrorResponse(VolleyError error) {
+// Toast.makeText(MainActivity.this, "Volley error", Toast.LENGTH_SHORT).show();
+// Log.e("MainActivity",error.toString());
+
+// }
+// }){
+// @Override
+// protected Map<String, String> getParams() throws AuthFailureError {
+// Map<String,String> map = new HashMap<String, String>();
+// map.put("name","Alif");
+// map.put("domain","http://itsalif.info");
+// return map;
+// }
+// };
+// requestQueue.add(jsonObjectRequest);
+// }
