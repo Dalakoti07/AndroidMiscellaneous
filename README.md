@@ -11,4 +11,9 @@ Launch mode ="single top" in activity manifest file make sure that activity is n
 
 ###
 When dealing with databases, it is better to have a contract which defines what the database is and how it looks like.
-When the database is changes then change the contract too. Working with db along with contracts is damn easy, insertion in database, deletion 
+When the database is changes then change the contract too. Working with db along with contracts is damn easy, insertion in database, deletion
+
+###
+Content Providers
+They are used to make two apps share the data, like scanning business card and storing the information to default calling app
+An Android should know four key app components : activity, Services, Broadcast Receivers and content Providers
